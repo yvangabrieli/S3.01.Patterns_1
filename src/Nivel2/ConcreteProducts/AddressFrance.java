@@ -3,12 +3,12 @@ import Nivel2.AbstractProducts.Address;
 public class AddressFrance implements Address {
     private int number;
     private String street;
-    private int postCode;
+    private String postCode;
     private String city;
     private static final String FRANCE = "France";
 
-    public AddressFrance (int number, String street,int postCode, String city){
-        if (number < 0 || street.isEmpty() || String.valueOf(postCode).length() != 5 || city.isEmpty()){
+    public AddressFrance (int number, String street,String postCode, String city){
+        if (number < 0 || street.isEmpty() || !postCode.matches("\\d{5}") || city.isEmpty()){
             throw new IllegalArgumentException("Invalid input");
         }
         this.number = number;
@@ -16,8 +16,9 @@ public class AddressFrance implements Address {
         this.postCode = postCode;
         this.city = city;
     }
+
     @Override
     public String getAddress(){
-        return ("Address: " + number + " " + street + ", " + postCode + " " + city + ", " +  FRANCE);
+        return ("Address: " + String.valueOf(number) + " " + street + ", " + String.valueOf(postCode) + " " + city + ", " +  FRANCE);
     }
 }

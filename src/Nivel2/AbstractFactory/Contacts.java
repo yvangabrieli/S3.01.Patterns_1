@@ -7,16 +7,22 @@ public class Contacts {
     private String name;
     private Address address;
     private PhoneNumber number;
-    public Contacts (String name, Address address, PhoneNumber number ){
+    public Contacts (String name){
         if ( name == null || name.trim().isEmpty()) {System.out.println("Name cannot be Empty or Null");}
         this.name = name.trim();
-        if ( address == null) {System.out.println("Address cannot be Null");}
+    }
+    public void setAddress(Address address) {
         this.address = address;
-        if ( number == null ) {System.out.println("Number cannot be Null");}
+    }
+    public String getName(){
+        return this.name = name;
+    }
+
+    public void setPhoneNumber(PhoneNumber number) {
         this.number = number;
     }
-    public String showContact(){
-        return ("Name: " + name + " \n Address: " + address.getAddress() + " \n Phone Number: " + number.getPhoneNumber());
 
+    public String showContact(){
+        return ("Name: " + name + " \n" + (address != null ? address.getAddress() : "N/A")  + " \nPhone Number: " + (number != null ? number.getPhoneNumber() : "N/A") );
     }
 }

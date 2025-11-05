@@ -4,9 +4,9 @@ import Nivel2.AbstractProducts.PhoneNumber;
 
 public class PhoneNumberItaly implements PhoneNumber {
         private static final String PREFIX = "+39";
-        private int number;
+        private long number;
 
-    public PhoneNumberItaly (int number) {
+    public PhoneNumberItaly (long number) {
             if (String.valueOf(number).length() != 10){
                 throw new IllegalArgumentException("the number has to have 10 digits");
             }
@@ -14,7 +14,7 @@ public class PhoneNumberItaly implements PhoneNumber {
         }
 @Override
         public String getPhoneNumber(){
-            return PREFIX + String.valueOf(number);
+            return PREFIX + "-" + String.valueOf(number);
         }
     }
 
