@@ -9,8 +9,7 @@ public class Undo {
         history = new ArrayList<>();
     }
     public void addCommand(String command){
-        if (command.isEmpty()){
-            //throw new IllegalArgumentException
+        if (command == null || command.isEmpty() ){
             System.out.println("Please insert a valid command");
         } else {
         history.add(command);}
