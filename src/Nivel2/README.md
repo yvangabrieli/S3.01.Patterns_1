@@ -71,6 +71,5 @@ Although this exercise does not include JUnit tests, possible test cases include
 ## 🛠️ Installation
 
 1. **Clone the repository:**
-   ```bash
-https://github.com/yvangabrieli/S3.01.Patterns_1/new/main/src/Nivel2
+   ```bash https://github.com/yvangabrieli/S3.01.Patterns_1/new/main/src/Nivel2
 ```
